@@ -1,0 +1,72 @@
+.box {
+    width: 300px;
+    height: 250px;
+    margin: 0 auto;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.start-game {
+    background-image: url("img/start-bg-without-btn.png");
+    text-align: center;
+}
+
+.broken-car {
+    background-image: url(img/broken-car.png);
+    position: relative;
+    display: none;
+}
+
+/* All btn will be there */
+.btn-start {
+    position: absolute;
+    left: 35%;
+    bottom: 50px;
+    cursor: pointer;
+}
+
+.ul-style {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    text-align: center;
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+}
+
+.ul-style li {
+    display: inline-block;
+    margin-right: 5px;
+}
+
+.ul-style li a {
+    display: inline-block;
+    background-color: #fff;
+    width: 70px;
+    height: 27px;
+    font-size: 11px;
+    padding: 3px;
+    cursor: pointer;
+}
+
+.tik-mark {
+    position: relative;
+}
+
+.tik-mark:before {
+    content: '';
+    position: absolute;
+    background-image: url(img/tik-mark.png);
+    width: 12px;
+    height: 12px;
+    right: -1px;
+    top: -4px;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+/* Some public class */
+.display-none {display: none}
