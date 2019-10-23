@@ -38,24 +38,32 @@ $(function () {
             wc_img: 'img/congratulations.png',
         };
 
-        btn.addClass('tik-mark');
         let tik_mark_length = broken_car.find('.tik-mark').length;
 
-        if (tik_mark_length == 3) {
-            fadeOfImg(broken_car, img_url.car_paints, 200, 500);
-            broken_car.attr('id', 'congratulations').find('.ul-style').fadeOut(500);
-            imgRotation('congratulations', 500, 1500);
-
-            setTimeout(function () {
-                fadeOfImg(broken_car, img_url.wc_img);
-            }, 3000);
-        } else {
-            if (btn[0].id === 'fix-broken-wheel') {
-                fadeOfImg(broken_car, img_url.tyer_fixed);
-            } else if (btn[0].id === 'remove-scratches') {
+        if (btn[0].id === 'fix-broken-wheel') {
+            btn.addClass('tik-mark');
+            fadeOfImg(broken_car, img_url.tyer_fixed);
+        } else if (btn[0].id === 'remove-scratches') {
+            if ( $('.ul-style li').first().children().hasClass('tik-mark') ) {
                 fadeOfImg(broken_car, img_url.scratch_fixed);
+                btn.addClass('tik-mark');
+            } else {
+                alert('Fix broken wheels');
+            }
+
+        } else {
+            btn.addClass('tik-mark');
+            if (tik_mark_length == 3) {
+                fadeOfImg(broken_car, img_url.car_paints, 200, 500);
+                broken_car.attr('id', 'congratulations').find('.ul-style').fadeOut(500);
+                imgRotation('congratulations', 500, 1500);
+
+                setTimeout(function () {
+                    fadeOfImg(broken_car, img_url.wc_img);
+                }, 3000);
             }
         }
+        
     });
 
 })
